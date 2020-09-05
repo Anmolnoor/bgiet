@@ -1,0 +1,152 @@
+<%- include("partials/header")-%> 
+
+
+<section id="services" class="services section-bg">
+    <div class="container spacertop" data-aos="fade-up">
+
+ 
+
+  <div class="container spacertop emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="assets/img/pp.png" alt=""/>
+                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                            <h5>
+                                <%= username %>
+                            </h5>
+                            <h6>
+                                <%= status %>
+                            </h6>
+                            
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a href="/logout" class="btn btn-outline-primary btn-block">Logout</a>
+                <br>
+                <a href="/editprofile" class="btn btn-outline-primary btn-block">Edit Profile</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>WORK LINK</p>
+                    <a class="btn btn-outline-primary btn-block" href="/upldsub">Submit-Assignments</a><br/>
+                    <!-- <a href="">Bootsnipp Profile</a><br/>
+                    <a href="">Bootply Profile</a>
+                    <p>SKILLS</p>
+                    <a href="">Web Designer</a><br/>
+                    <a href="">Web Developer</a><br/>
+                    <a href="">WordPress</a><br/>
+                    <a href="">WooCommerce</a><br/>
+                    <a href="">PHP, .Net</a><br/> -->
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Roll Number</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%= rollnumber %></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>First Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%= firstname %></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Last Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%= lastname %></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%= email %></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone Number</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%= phonenumber %></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Branch</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%= branch %> <%= semester %></p>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Assignment-name</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>Subjects</p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <p>
+                                            <% let count = 0 %> 
+                                            <% filename.forEach(element => {if(element){count = count + 1}   %>
+                                            <% }); %> 
+                                            <%= count %> 
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  
+                                  <% filename.forEach(element => { %>
+                                       <div class="col-md-6">
+                                         <label><%=element.filename%></label>
+                                        </div>
+                                         <div class="col-md-3"> 
+                                         <p><%=element.subject%></p> 
+                                         </div>
+                                         <div class="col-md-3"> 
+                                         <p>✅</p>
+                                          </div>  
+                                          <%   }); %> 
+                                  
+                                   
+                                    
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>           
+</div>
+</div>
+</section>
+<%-include("partials/footer")-%> 

@@ -1,0 +1,39 @@
+<%-include("partials/header")-%>
+<section id="services" class="services section-bg">
+    <div class="container spacertop " data-aos="fade-up">
+
+
+        <form class="form-signin" action="/tr" method="POST">
+                  
+            <header class="section-header">
+                <h3>Register</h3>
+               <br>
+              </header>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control upper" name="username" placeholder="Email address" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control lower" name="password" placeholder="Password" required>
+          <!-- <label><div class="checkbox mb-3 btn btn-lg btn-outline-primary btn-block">
+            
+              <input type="checkbox" value="remember-me"> Remember me
+            
+          </div></label> -->
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          <!-- <a href="/auth/google" class="btn btn-lg btn-social btn-google btn-block"><span class="fa fa-google"></span> Register with Google</a>
+          <a href="#" class="btn btn-lg btn-social btn-facebook btn-block"><span class="fa fa-facebook"></span> Register With Facebook</a>
+            -->
+          <a href="/tsignin" class="btn btn-lg btn-primary btn-block">Sign in</a>
+          <!--onclick="location.href=register.html;" -->
+ 
+</form>
+
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+
+  <%-include("partials/footer")-%>

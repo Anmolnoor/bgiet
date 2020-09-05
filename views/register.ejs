@@ -1,0 +1,97 @@
+<%-include("partials/header")-%>
+
+
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center" data-aos="fade-up">
+        <div class="col-md-6 intro-info order-md-first order-last spacertop" data-aos="zoom-in" data-aos-delay="100">
+          <h2>Sign In<br><span>If you already Register  YourSelf</span></h2>
+          <div>
+            <a href="/signin" class="btn-get-started scrollto">Sign In</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 intro-img order-md-last order-first" data-aos="zoom-out" data-aos-delay="200">
+            
+            <div class="text-center spacertop">
+                <form class="form-signin" action="/register" method="POST">
+                    <header class="section-header">
+                        <h3>Register</h3>
+                       <br>
+                      </header>
+                  
+                  <!-- <label for="inputPassword" class="sr-only">Roll Number</label>
+                  <input type="text" id="rollNumber" class="form-control upper" name="rollNumber" placeholder="Roll Number" required autofocus>
+                  <label for="inputPassword" class="sr-only">First Name</label>
+                  <input type="text" id="firstName" class="form-control middle" name="fName" placeholder="First Name" required autofocus>
+                  <label for="inputPassword" class="sr-only">Last Name</label>
+                  <input type="text" id="LastName" class="form-control middle" name="lName" placeholder="Last Name" required> -->
+                  <label for="inputEmail" class="sr-only">Email address</label>
+                  <input type="email" id="inputEmail" class="form-control upper" name="username" placeholder="Email address" required >
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" id="inputPassword" class="form-control lower" name="password" placeholder="Password" required>
+                  <!-- <label for="inputPassword" class="sr-only">Password Again</label>
+                  <input type="password" id="inputPasswordAgain" class="form-control middle" name="rePassword" placeholder="Password Again" required>
+                  <label for="inputPassword" class="sr-only">Phone Number</label>
+                  <input type="password" id="inputPhoneNumber" class="form-control lower" name="phoneNumber" placeholder="Phone Number" required>
+             -->
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+                  <!-- <a href="/auth/google" class="btn btn-lg btn-social btn-google btn-block"><span class="fa fa-google"></span> Register with Google</a>
+                  <a href="#" class="btn btn-lg btn-social btn-facebook btn-block"><span class="fa fa-facebook"></span> Register With Facebook</a>-->
+                  <a href="/signin" class="btn btn-lg btn-primary btn-block">Sign In</a>
+                  <!--onclick="location.href=register.html;" -->
+                </form>
+              </div>
+            
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <%-include("partials/footer")-%>

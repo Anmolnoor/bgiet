@@ -1,0 +1,120 @@
+<%- include("partials/header")-%> 
+
+
+
+<section id="services" class="services section-bg">
+    <div class="container spacertop" data-aos="fade-up">
+        <div><br><br><br></div>
+        <div class="container bootstrap snippets bootdey">
+            <div class="row ng-scope">
+                <div class="col-md-2">
+                    <div class="panel panel-default">
+                        <div class="panel-body text-center">
+                           
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <br><br>
+                          <div class="h4 text-center"><h2>Edit Your Information</h2></div>
+                          <br><br>
+                            <div class="row pv-lg">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-8">
+
+                                    <form class="form-horizontal ng-pristine ng-valid" action="/editprofile" method="POST">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="rollnumber">Roll_number</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" id="rollnumber" name="rollnumber" type="text" placeholder="University Roll Number" value="<%=rollnumber%>" required>
+                                            </div>
+                                            <br>
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="firstname">First_Name</label>
+                                                <div class="col-sm-10">
+                                                    <input class="form-control" id="firstname" name="firstname" type="text" placeholder="First Name" value="<%=firstname%>" required>
+                                                </div>
+                                                <br>
+                                            <label class="col-sm-2 control-label" for="lastname">Last_Name</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" id="lastname" name="lastname" type="text" placeholder="Last Name" value="<%=lastname%>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="email">Email</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" id="email" name="email" type="email" placeholder="Email@address.com" value="<%= email %>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="phonenumber">Phone_Number</label>
+                                            <div class="col-sm-10">
+                                                <input class="form-control" id="phonenumber" name="phonenumber" type="text" placeholder="Mobile Number" value="<%= phonenumber %>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="sel1">Branch</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="branch" id="sel1" >
+                                                    <option value="err">Select One!</option>
+                                                    <option value="B.Tech. C.S.E.">B.Tech. C.S.E.</option>
+                                                    <option value="B.Tech. E.C.E." disabled>B.Tech. E.C.E.</option>
+                                                    <option value="B.Tech. I.T." disabled>B.Tech. I.T.</option>
+                                                    <option value="B.Tech. M.E." disabled>B.Tech. M.E.</option>
+                                                    <option value="B.Tech. E.E." disabled>B.Tech. E.E.</option>
+                                                    <option value="B.Tech. C.E." disabled>B.Tech. C.E.</option>
+                                                    <option value="B.Tech. F.T." disabled>B.Tech. F.T.</option>
+                                                  </select>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="col-sm-2 control-label" for="sel1">Semester</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="semester" id="sel1">
+                                                    <option value="err">Select One!</option>
+                                                    <option value="1" disabled>1</option>
+                                                    <option value="2" disabled>2</option>
+                                                    <option value="3" disabled>3</option>
+                                                    <option value="4" disabled>4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6" disabled>6</option>
+                                                    <option value="7" disabled>7</option>
+                                                    <option value="8" disabled>8</option>
+                                                  </select>
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            
+                                            <div class="col-sm-10">
+                                                <p>Make sure Info is correct!!!</p>
+                                            </div>
+                                          </div>
+                                          
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                 <button class="btn btn-info" type="submit">Update</button>  
+                                                 <a href="/profile" class="btn btn-info">Go Back!</a>                                   
+                                                 <!-- <a class="btn btn-info text-muted" href="#" >Delete this contact?</a> -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+           
+</div>
+</section>     
+
+
+<%-include("partials/footer")-%> 

@@ -1,0 +1,51 @@
+<%-include("partials/header")-%>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center" data-aos="fade-up">
+        <div class="col-md-6 intro-info order-md-first order-last" data-aos="zoom-in" data-aos-delay="100">
+          <h2>Register<br>YourSelf At <br><span>Bhai Gurdas Institute of Engineering and Technology</span></h2>
+          <div>
+            <a href="/register" class="btn-get-started scrollto">Register</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 intro-img order-md-last order-first" data-aos="zoom-out" data-aos-delay="200">
+            
+            <div class="text-center topspace">
+   
+                <form class="form-signin" action="/signin" method="POST">
+                  
+                    <header class="section-header">
+                        <h3>Sign In</h3>
+                       <br>
+                      </header>
+                  <label for="inputEmail" class="sr-only">Email address</label>
+                  <input type="email" id="inputEmail" class="form-control upper" name="username" placeholder="Email address" required autofocus>
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" id="inputPassword" class="form-control lower" name="password" placeholder="Password" required>
+                  <label><div class="checkbox mb-3 btn btn-lg btn-outline-primary btn-block">
+                    
+                      <input type="checkbox" value="remember-me"> Remember me
+                    
+                  </div></label>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                  <!-- <a href="/auth/google" class="btn btn-lg btn-social btn-google btn-block"><span class="fa fa-google"></span> Register with Google</a>
+                  <a href="#" class="btn btn-lg btn-social btn-facebook btn-block"><span class="fa fa-facebook"></span> Register With Facebook</a>
+                    -->
+                  <a href="/register" class="btn btn-lg btn-primary btn-block">Register</a>
+                  <!--onclick="location.href=register.html;" -->
+                </form>
+            </div>
+            
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+
+
+  <%-include("partials/footer")-%>
