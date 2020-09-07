@@ -1,0 +1,82 @@
+<%-include("partials/hlogin")-%>
+<section id="services" class="services section-bg">
+    <div class="container spacertop " data-aos="fade-up">
+
+
+       
+<section>
+    <div class="container p-5">
+      <!-- For demo purpose -->
+      <div class="row mb-5 text-center text-white">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="display-4"> </h1>
+        </div>
+      </div>
+      <!-- End -->
+  
+  
+      <div class="row">
+        <div class="col-lg-5 mx-auto">
+          <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+  
+            <!-- Default bootstrap file upload-->
+  
+            <h4 class="text-center mb-4 text-muted">
+              Select Your Subject!
+            </h4>
+            
+            <form action='/task'  method='post'  >
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="sel1">Subject</label>
+              <div class="col-sm-10">
+                  <select class="form-control" name="sub" id="sel1">
+                      <option value="err">Select One!</option>
+                      <option value="ERP">ERP</option>
+                      <option value="CG">CG</option>
+                      <option value="CN">CN</option>
+                      <option value="DBMS">DBMS</option>
+                      <option value="FLAT">FLAT</option>
+                      <option value="SE">SE</option>
+                    </select>
+              </div>
+            </div>
+
+            <textarea id="w3review" class="file-upload btn btn-primary btn-block rounded-pill shadow" name="txtarea" rows="2" cols="50">Task Here</textarea>
+              
+            <!-- <input type="text" class="file-upload btn btn-primary btn-block rounded-pill shadow" placeholder="Task Here"> -->
+                    
+            <button class="file-upload btn btn-primary btn-block rounded-pill shadow" type='submit'>Post</button>
+            
+            <a href="/tprofile" class="file-upload btn btn-primary btn-block rounded-pill shadow">Go Back</a>
+            </form>   
+                        
+            <!-- <div class="custom-file overflow-hidden rounded-pill mb-5">
+              <input id="customFile" type="file" class="custom-file-input rounded-pill">
+              <label for="customFile" class="custom-file-label rounded-pill">Choose file</label>
+            </div> -->
+            <!-- End -->
+  
+            
+            <!-- Custom bootstrap upload file-->
+            <!-- <label for="fileUpload" class="file-upload btn btn-primary btn-block rounded-pill shadow"> -->
+                          
+                      <!-- </label> -->
+            <!-- End -->
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+        
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+
+
+  <%-include("partials/footer")-%>

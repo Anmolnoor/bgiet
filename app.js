@@ -22,6 +22,7 @@ const {
 const {
   stringify
 } = require("querystring");
+const { concat } = require("lodash");
 
 // ======================= app ======================
 const app = express();
@@ -85,6 +86,12 @@ const teacherInfo = new mongoose.Schema({
   subject: String
 })
 
+const taskSchema = new mongoose.Schema({
+  date:String,
+  task:String,
+  sub:String
+})
+
 // ====================== plugins =========================
 
 userSchema.plugin(passportLocalMongoose);
@@ -98,6 +105,8 @@ const Upload = new mongoose.model("Upload", uploadSchema);
 
 const TeacherInfo = new mongoose.model("TeacherInfo", teacherInfo);
 
+const Task = new mongoose.model("Task", taskSchema);
+
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
@@ -105,6 +114,47 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 var userId = "";
+
+
+//=========================== Date and time ==========================
+
+function dateStr(){
+  var d = new Date();
+ 
+  var date = d.getDate();
+  var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
+  var year = d.getFullYear();
+  var min  = d.getMinutes();
+  var hours = new Date().getHours();
+  var hours = (hours+24)%24; 
+  var mid='am';
+  if(hours==0){ //At 00 hours we need to show 12 am
+  hours=12;
+  if(min<9){
+    min="0"+min
+  }
+  }
+  else if(hours<10){
+    hours="0"+hours;
+    if(min<9){
+      min="0"+min
+    }
+  }
+  else if(hours>12)
+  {
+  hours=hours%12;
+  mid='pm';
+  if(min<9){
+    min="0"+min
+  }
+  }
+ 
+  
+  
+  return hours+":"+min+mid+" "+" "+ date + "/" + month + "/" + year;
+}
+
+
 
 
 // ==========================  route'ssss  =========================
@@ -402,7 +452,13 @@ app.route("/upload").get((req, res) => {
 });
 
 
-app.route("/tsignin").get((req, res) => res.render("tsignin"))
+app.route("/tsignin").get((req, res) => {
+  if (req.isAuthenticated()) {
+    res.redirect("/tprofile");
+  } else {
+      res.render("tsignin")
+  }
+})
   .post((req, res, next) => {
 
     const user = new User({
@@ -542,8 +598,58 @@ app.route("/teditprofile").get((req, res) => {
 
 })
 
+app.route("/download/:fileselected").get((req,res)=>{
+  const fileselected = req.params.fileselected;
+  if (!req.isAuthenticated()) {
+    res.redirect("/tsignin");
+  } else {
+  res.download(__dirname+"/uploads/"+fileselected);
+  }
+});
+
+app.route("/tasks").get((req,res)=>{
+  if (!req.isAuthenticated()) {
+    res.redirect("/tsignin");
+  } else {
+      Task.find((err,tasks)=>{
+        if(err){
+          console.log(err);
+        }else{
+          res.render("tasks",{tasks:tasks})
+        }
+      })
+     
+  }
+})
+
+app.route("/task").get((req,res)=>{
+  if (!req.isAuthenticated()) {
+    res.redirect("/tsignin");
+  } else {
+      res.render("task")
+  }
+}).post((req,res)=>{
+    const task = req.body.txtarea;
+    const sub = req.body.sub;
+    const newTask  = new Task({
+      date:dateStr(),
+      task:task,
+      sub:sub
+    })
+
+    newTask.save((err)=>{
+      if(err){
+        console.log(err);
+      }else{
+        res.redirect("/tasks")
+      }
+    })
+})
 
 
-app.listen(3000, function () {
+
+let port = process.env.PORT || "3000"
+
+app.listen(port, function () {
   console.log("Server started on port 3000");
 });

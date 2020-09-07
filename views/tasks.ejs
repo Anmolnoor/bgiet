@@ -1,0 +1,44 @@
+<%-include("partials/hlogin")-%>
+<section id="services" class="services section-bg">
+    <div class="container spacertop " data-aos="fade-up">
+
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+        
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h3>Home Work or Assignments </h3>
+                    
+                    <ul class="timeline">
+                            
+                            <% tasks.slice().reverse().forEach(task => { %>
+                                <li></li>
+                            <a  href="#">  <%= task.sub %></a>
+
+                            <a href="#" class="float-right"><%= task.date %></a>
+                            <br>
+                            <p><%= task.task %></p>
+                        </li><br>
+                        <% }); %> 
+                        
+                    </ul>
+                    <!-- <a href="/tprofile" class="file-upload btn btn-primary btn-block rounded-pill shadow">Go Back</a> -->
+                </div>
+            </div>
+        </div>
+        <!-- target="_blank" -->
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+
+
+  <%-include("partials/footer")-%>
