@@ -234,6 +234,9 @@ ul.timeline > li:before {
     height: 20px;
     z-index: 400;
 }
+#fileUpload{
+    display: none;
+}
 
 .spacertop{
     margin-top: 80px;

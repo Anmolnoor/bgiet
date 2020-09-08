@@ -42,8 +42,9 @@ app.use(fileUpload());
 
 
 // ====================== database system ======================
+// "mongodb://localhost:27017/bgietdb"
 
-mongoose.connect("mongodb://localhost:27017/bgietdb", {
+mongoose.connect("mongodb+srv://AnmolNoor:"+process.env.PASSWORD+"@bgiet.mxxj7.mongodb.net/bgietdb?retryWrites=true&w=majority" , {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -258,7 +259,7 @@ app.route("/register").get(function (req, res) {
     } else {
       passport.authenticate("local")(req, res, function () {
 
-        console.log(userId);
+        
         const newUser = new Info({
           id: req.user._id,
           rollnumber: "1234567890",
@@ -322,7 +323,7 @@ app.route("/editprofile").get((req, res) => {
       id: req.user._id
     }, (err, user) => {
       userId = req.user._id;
-      console.log(userId);
+      
       res.render("editprofile", {
         rollnumber: user.rollnumber,
         firstname: user.firstname,
@@ -386,7 +387,7 @@ app.route("/upldsub").get((req, res) => {
   })
   .post((req, res) => {
     sub = req.body.subject
-    console.log(sub);
+    
     res.redirect("/upload")
 
   })
@@ -416,12 +417,12 @@ app.route("/upload").get((req, res) => {
 
 
 
-    console.log(req.files.foo);
+   
     foo.mv('uploads/' + foo.name, function (err) {
       if (err)
         return res.status(500).send(err);
 
-      console.log(req.body.subject);
+      
       const newuploadd = new Upload({
         id: req.user._id,
         subject: sub,

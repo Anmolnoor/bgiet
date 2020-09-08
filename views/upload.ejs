@@ -29,16 +29,20 @@
             <form ref='uploadForm' name="uploadform" id='uploadForm' action='/upload'  method='post'  enctype="multipart/form-data">
           
                   
-
-                    <input class="file-upload btn btn-primary btn-block rounded-pill shadow" id="fileUpload" type="file" name="foo">        
+              <div class="custom-file overflow-hidden rounded-pill mb-5">
+                <input id="fileUpload" type="file" name="foo" class="custom-file-input rounded-pill">
+                <label for="fileUpload" class="custom-file-label rounded-pill">Choose file</label>
+              </div>
+                    
                                 <input class="file-upload btn btn-primary btn-block rounded-pill shadow" type='submit' value='Upload!' />
                                 <a href="/profile" class="file-upload btn btn-primary btn-block rounded-pill shadow">Go Back</a>
                                 </form>   
-                        
-            <!-- <div class="custom-file overflow-hidden rounded-pill mb-5">
-              <input id="customFile" type="file" class="custom-file-input rounded-pill">
-              <label for="customFile" class="custom-file-label rounded-pill">Choose file</label>
-            </div> -->
+                        <!-- <input  id="fileUpload" type="file" name="foo">
+                    <label for="fileUpload" class=" file-upload btn btn-primary btn-block rounded-pill shadow">
+                      Choose a File
+                    </label>
+                             -->
+            
             <!-- End -->
   
             
@@ -54,6 +58,11 @@
     </div>
   </section>
 </div></section>
-
+<script type="application/javascript">
+  $('input[type="file"]').change(function(e){
+      var fileName = e.target.files[0].name;
+      $('.custom-file-label').html(fileName);
+  });
+</script>
 
 <%-include("partials/footer")-%>
