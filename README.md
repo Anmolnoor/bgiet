@@ -5,4 +5,4 @@ This is a web application where the student can Submit there Assignments and Col
 This is the 1.0.0 Version of this webSite.
 check out:-
 
-https://stormy-atoll-58945.herokuapp.com/
+https://bgiet.herokuapp.com/
